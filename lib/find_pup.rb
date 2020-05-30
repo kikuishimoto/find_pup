@@ -6,6 +6,7 @@ require_relative "./find_pup/dog"
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 module FindPup
   class Error < StandardError; end

@@ -1,8 +1,8 @@
 
 class FindPup::CLI
     def call 
-        puts "\nWelcome to Find Pup!\n"
-        puts "The app that give you information on all your favorite large dog breeds!"
+        puts "\nWelcome to Find Pup!\n".red
+        puts "The app that give you information on all your favorite large dog breeds!".red
         make_dogs
         list_dogs
         menu
@@ -13,7 +13,7 @@ class FindPup::CLI
     end 
     def list_dogs
         #list sizes 
-        puts "Chose a large dog to learn more."
+        puts "Chose a large dog to learn more.".blue
         @dogs_list = FindPup::Dog.all
         @dogs_list.each.with_index(1) {|dog, index| 
         puts "#{index}. #{dog.name}"}
@@ -32,7 +32,7 @@ class FindPup::CLI
 
     def menu
         input = nil 
-        puts "enter the adjacent number to learn more about the dog! or 'exit' to quit\n"
+        puts "Enter the adjacent number to learn more about the dog! or 'exit' to quit\n".blue
 
         
         while input != 'exit'
@@ -44,11 +44,11 @@ class FindPup::CLI
                 add_dog_detail(dog.url, input.to_i - 1)
                 puts "\n#{dog.info}"
 #enter number show list or to exit
-                puts "Enter another dog or enter 'exit' to quit"
+                puts "Enter another dog or enter 'exit' to quit".blue
             elsif input == 'exit'
                 break
             else
-                puts 'please check input'
+                puts "Invalid input. Please enter a number or 'exit'".green
             end 
         end 
     end 
