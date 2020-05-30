@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby #run/executable file
+
+require_relative '../lib/find_pup'
+
+FindPup::CLI.new.call
